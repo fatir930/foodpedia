@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -52,6 +56,8 @@ body {
     border-radius: 5%;
     width: 350px;
     height: 500px;
+    text-align: center;
+    perspective: 1000px;
 }
 
 .recipe img {
@@ -64,14 +70,63 @@ body {
     padding-top: 0;
     margin-top: 0;
     position: absolute;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.178), rgba(255, 255, 255, 0.189));
-    border-radius: ;
     color: black;
     text-align: center;
 }
 
 .recipe p {
-    text-align: justify;
     font-weight: 550;
     padding: 2%;
+}
+
+.details-button {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    background-image: linear-gradient(to right, tomato, salmon);
+    padding: 10px 20px;
+    margin: 30%;
+    border-radius: 20px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: 0.8s;
+    transform-style: preserve-3d;
+}
+
+.recipe:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-image: linear-gradient(rgb(255, 255, 240), rgb(255, 255, 255));
+    border-radius: 5%;
+}
+
+.flip-card-back {
+    color: rgb(0, 0, 0);
+    transform: rotateY(180deg);
+    text-align: left;
+}
+
+.flip-card-back ul {
+    margin-top: 20%;
+}
+
+.flip-card-back h1 {
+    color: crimson;
+    margin-top: 3%;
+    padding-left: 3%;
+}
+
+.flip-card-back a {
+    text-align: center;
 }
